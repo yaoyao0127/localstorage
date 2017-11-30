@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>H5 web存储</title>
+		<link rel="stylesheet" href="pagetheme.css">
+		
+	</head>
+	<body>
+		<header>
+			<h1>H5 web存储</h1>
+		</header>
+		<div id="container">
+			<section>
+				<article>
+					<header>
+						<h1>页面设置</h1>
+					</header>
+					<div>
+						主题颜色：
+						<select id="colorSelector">
+							<option value="red">红色</option>
+							<option value="orange">橙色</option>
+							<option value="yellow">黄色</option>
+							<option value="green">绿色</option>
+							<option value="blue">蓝色</option>
+							<option value="purple">紫色</option>
+						</select>
+					</div>
+					<button onclick="saveSettings()">保存并设置</button>                                                                                                                                                                              
+					<footer></footer>
+				</article>
+			</section>
+		</div>
+		<footer>
+			<h2>Copyright&copy;:WYY 2016-2020 All Right Reserved.</h2>
+		</footer>
+	<script>
+	var x=document.getElementsByTagName("header");
+	var y=document.getElementsByTagName("footer");
+	var bgColor;
+	function saveSettings(){
+		bgColor=document.getElementById("colorSelector").value;
+		localStorage.setItem('bgcolor',bgColor);
+		showColor();
+	}
+	function showColor(){
+		for(var i=0;i<x.length;i++){
+			x[i].style.backgroundColor=bgColor;
+			y[i].style.backgroundColor=bgColor;
+		}
+	}
+	</script>
+	</body>
+</html>
