@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>H5 web localstorage</title>
+		<link rel="stylesheet" href="notebook.css">
+		<script src="notebook.js"></script>
+	</head>
+	<body onload="getHistory()">
+	<h3>我的日记本<h3>
+	<div>
+	<h4>开始写日记</h4>
+		<textarea id="note">
+		</textarea>
+		<button onclick="save()">保存日志</button>
+		<button onclick="clearAll()">删除全部日志</button>
+	</div>
+	<div>
+		<table border="1">
+		<caption>历史记录</caption>
+		<tr><th>序号</th><th>日志内容</th><th>保存时间</th><th>操作</th></tr>
+		<tbody id="history"></tbody>
+		
+		</table>
+	</div>
+	</body>
+</html>
