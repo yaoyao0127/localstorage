@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="pagetheme.css">
 		
 	</head>
-	<body>
+	<body onload="loadSettings()">
 		<header>
 			<h1>H5 web存储</h1>
 		</header>
@@ -39,9 +39,16 @@
 	var x=document.getElementsByTagName("header");
 	var y=document.getElementsByTagName("footer");
 	var bgColor;
+	function loadSettings(){
+	bgColor=localStorage.getItem('bgColor');
+	console.log(bgColor)
+	if(bgColor!=null)
+		showColor();
+	document.getElementById("colorSelector").value=bgColor;
+	}
 	function saveSettings(){
 		bgColor=document.getElementById("colorSelector").value;
-		localStorage.setItem('bgcolor',bgColor);
+		localStorage.setItem('bgColor',bgColor);		
 		showColor();
 	}
 	function showColor(){
@@ -50,6 +57,7 @@
 			y[i].style.backgroundColor=bgColor;
 		}
 	}
+	
 	</script>
 	</body>
 </html>
