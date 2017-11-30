@@ -41,7 +41,6 @@
 	var bgColor;
 	function loadSettings(){
 	bgColor=localStorage.getItem('bgColor');
-	console.log(bgColor)
 	if(bgColor!=null)
 		showColor();
 	document.getElementById("colorSelector").value=bgColor;
